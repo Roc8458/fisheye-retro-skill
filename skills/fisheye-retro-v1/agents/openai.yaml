@@ -1,0 +1,7 @@
+interface:
+  display_name: "鱼眼复古 · Fisheye Retro"
+  short_description: "将照片转化为圆形鱼眼镜头复古胶片风格，带颗粒、色偏与暗角"
+  default_prompt: "用 $fisheye-retro-v1 把这张照片做成鱼眼复古胶片风格"
+
+policy:
+  allow_implicit_invocation: true
