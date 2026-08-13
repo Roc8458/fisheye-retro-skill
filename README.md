@@ -10,6 +10,7 @@
 - **复古胶片质感**：有机颗粒、色偏（暖黄/青绿/淡紫）、光晕、柔焦
 - **Lo-fi 街头氛围**：随性、粗糙、非精致、Analog 感
 - **暗色画框**：圆形外沉入纯黑/深炭色底
+- **默认无文字**：默认不生成任何文字、水印或标注，只有你指定文字时才会出现
 
 ## 安装
 
@@ -20,7 +21,7 @@
    ```
 3. 复制 skill 到 Codex skills 目录：
    ```bash
-   cp -R fisheye-retro-skill/skills/fisheye-retro-v1 ~/.codex/skills/
+   cp -R fisheye-retro-v1/skills/fisheye-retro-v1 ~/.codex/skills/
    ```
 4. 重启 Codex
 
@@ -40,7 +41,7 @@ $fisheye-retro-v1
 
 ## 效果预览
 
-### 示例 01 · 海滨黄昏（Dusk Drift）
+### 示例 01 · 海滨黄昏
 
 | 原图 | 鱼眼复古效果 |
 |------|------|
