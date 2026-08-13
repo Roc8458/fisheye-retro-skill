@@ -106,6 +106,14 @@ For every element, decide:
 
 Do not preserve straight horizons. Do not create a normal rectilinear perspective inside a circular mask.
 
+### Distortion Enforcement
+
+Barrel distortion is the skill's non-negotiable signature. Even when the reference photo shows normal rectilinear perspective:
+
+- All straight lines (horizons, buildings, roads, railings) must bow outward into visible curves in the output.
+- Never reproduce the reference photo's original straight-line perspective inside the circular crop.
+- If the generated result keeps lines straight, it is a failed generation—regenerate with stronger distortion language.
+
 ### Film Texture Grammar
 
 Choose one primary film character:
@@ -267,7 +275,7 @@ Choose an observed feeling, not metadata:
 
 Write the final prompt as four compact paragraphs:
 
-1. **Canvas and fisheye geometry:** 1:1 square, centered circle, dark matte, barrel distortion degree, horizon curve, subject placement within circle.
+1. **Canvas and fisheye geometry:** 1:1 square, centered circle, dark matte, strong barrel distortion — all straight lines bow outward into visible curves, never the reference photo's rectilinear perspective — horizon curve, subject placement within circle.
 2. **Scene fidelity:** core subjects, spatial invariants, what survives distortion.
 3. **Film texture, color, and vignette:** grain character, exact color cast, saturation/contrast treatment, light leak position and color, vignette strength and transition, soft focus behavior.
 4. **Reproduction mood and constraints:** matte surface, lo-fi atmosphere, text placement and wording, hard avoids.
