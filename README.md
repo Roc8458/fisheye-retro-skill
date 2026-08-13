@@ -40,7 +40,9 @@ $fisheye-retro-v1
 
 ## 效果预览
 
-| 原图 | 效果 |
+### 示例 01 · 海滨黄昏（Dusk Drift）
+
+| 原图 | 鱼眼复古效果 |
 |------|------|
 | ![source](examples/example-01/source.jpg) | ![result](examples/example-01/result.jpg) |
 
