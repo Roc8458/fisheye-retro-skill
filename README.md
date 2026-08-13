@@ -17,11 +17,11 @@
 1. 确保你已安装 [OpenAI Codex](https://github.com/openai/codex)
 2. 克隆本仓库：
    ```bash
-   git clone https://github.com/Roc8458/fisheye-retro-v1.git
+   git clone https://github.com/Roc8458/fisheye-retro-skill.git
    ```
 3. 复制 skill 到 Codex skills 目录：
    ```bash
-   cp -R fisheye-retro-v1/skills/fisheye-retro-v1 ~/.codex/skills/
+   cp -R fisheye-retro-skill/skills/fisheye-retro-v1 ~/.codex/skills/
    ```
 4. 重启 Codex
 
