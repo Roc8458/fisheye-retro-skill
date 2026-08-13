@@ -15,7 +15,7 @@ Create a lo-fi street photography image from a supplied photo. Preserve the sign
 - apply organic film grain, color cast, and light leaks;
 - let natural vignetting darken the edges toward the circular perimeter;
 - keep the mood raw, spontaneous, and analog;
-- keep the image completely free of text unless the user explicitly supplies wording.
+- add one restrained micro-text element as a film-edge trace.
 
 Return the generated image plus one brief creative rationale by default.
 
@@ -30,7 +30,7 @@ Resolve conflicts in this order:
 5. Keep the lo-fi street atmosphere spontaneous and unpolished.
 6. Control color through a retro film palette.
 7. Maintain center brightness with edge decay.
-8. Add no text at all unless the user explicitly supplies or requests wording.
+8. Add one restrained micro-text element without weakening the image hierarchy.
 
 Preserve the subject before perfecting the distortion. Add texture before adding decoration.
 
@@ -74,7 +74,7 @@ Resolve these visible fields in order:
 9. **Vignetting:** center brightness, edge darkness, transition curve, feathering.
 10. **Soft focus / lens behavior:** global or selective softness, chromatic aberration, flare.
 11. **Reproduction texture:** film stock character, matte surface, non-gloss finish.
-12. **No-text rule:** the image contains no text by default; only user-supplied wording may appear.
+12. **Micro-text system:** exact wording, placement, scale, ink value, and material integration.
 13. **Mood and hard avoids:** emotional temperature and prohibited aesthetics.
 
 Compile only instructions that can become visible pixels. Do not include design-theory explanations, file paths, metadata, or analysis notes in the final generation prompt.
@@ -206,18 +206,45 @@ Mentally remove the color cast. If the image still reads as a vintage fisheye ph
 - Apply organic film grain, one consistent color cast, natural vignetting, and selective light leaks.
 - Keep the result matte, non-glossy, non-HDR, non-digital.
 - Maintain lo-fi spontaneity—slight imperfections are desirable.
-- Add no text, caption, or watermark unless the user explicitly supplies or requests wording.
+- Add only the one micro-text element defined below.
 
-## Text Policy
+## Micro-Text System
 
-**Default: no text.** Generate the image with no words, letters, numbers, captions, stamps, or watermark-like marks anywhere—neither inside the circle nor in the dark matte.
+Text is a quiet film-edge trace, not a headline.
 
-Only when the user explicitly supplies or requests text, render it as a quiet film-edge trace following these rules:
+### Interaction and Defaults
 
-### Choose the Wording (only when the user supplies text)
+- **Default: add micro-text.** The artwork includes one quiet line of micro-text by default.
+- If the user has not expressed a text preference before generation, briefly ask once:
+  「要加微文字吗？默认加一行英文小字（可去掉，或改成中文/自定义文字）。」
+- User says no text (不要文字 / 无文字 / no text) → generate with no text at all.
+- User requests Chinese (加中文 / 中文) → use Chinese micro-text, 8 characters or fewer.
+- User supplies specific wording → reproduce it exactly; do not translate or rewrite.
+- User ignores the question or simply says generate → proceed with the default English micro-text.
+- Ask only once per conversation; do not re-ask for every image once the user's preference is known.
+
+### Choose the Wording
 
 - If the user supplies text, reproduce it exactly; do not translate, expand, or rewrite.
-- Never author text on your own. If the user did not supply or request wording, the image contains no text at all.
+- Otherwise, author one compact line from the scene's mood: a concrete word, a short phrase, or a keyword sequence.
+- Support three language modes: **Chinese-only**, **English-only**, or a **Chinese–English pairing**.
+- Use **English-only by default**. Switch to Chinese-only or bilingual only when the user explicitly supplies or requests it.
+- Chinese text: **8 Han characters or fewer**.
+- English text: **5 words or fewer**.
+- Prefer spare, evocative language: scene words, atmospheric fragments, or short poetic traces.
+
+### Default Direction When No Text Is Supplied
+
+Choose an observed feeling, not metadata:
+
+1. **Standalone scene word:** `Horizon`, `Drift`, `Neon`, `Concrete`, `Haze`, `Static`.
+2. **Keyword sequence:** `Street / Light / Dust`, `Glass · Summer · Haze`, `Subway, Fluorescent & Wait`.
+3. **Very short phrase:** `After hours`, `Lost signal`, `Soft focus`, `Wrong turn`.
+
+- Use concrete scene language for street, object, or place-led photos.
+- Use an emotional fragment for solitary figures, dusk, travel, or contemplative scenes.
+- For keyword sequences, prefer nouns and restrained adjectives. Use one separator style only: comma, centered dot `·`, slash `/`, or ampersand `&`.
+- Do not use dates, addresses, coordinates, weather readouts, or serial numbers by default.
 
 ### Lettering and Material
 
@@ -243,7 +270,7 @@ Write the final prompt as four compact paragraphs:
 1. **Canvas and fisheye geometry:** 1:1 square, centered circle, dark matte, barrel distortion degree, horizon curve, subject placement within circle.
 2. **Scene fidelity:** core subjects, spatial invariants, what survives distortion.
 3. **Film texture, color, and vignette:** grain character, exact color cast, saturation/contrast treatment, light leak position and color, vignette strength and transition, soft focus behavior.
-4. **Reproduction mood and constraints:** matte surface, lo-fi atmosphere, no text anywhere (unless the user supplied wording), hard avoids.
+4. **Reproduction mood and constraints:** matte surface, lo-fi atmosphere, text placement and wording, hard avoids.
 
 Use decisive language. State which modern qualities must disappear as clearly as which analog qualities must appear.
 
@@ -257,7 +284,7 @@ Use decisive language. State which modern qualities must disappear as clearly as
 6. Choose the film texture grammar and set grain density.
 7. Determine vignette strength, transition curve, and dark matte value.
 8. Place light leaks or flare if the source lighting supports it.
-9. If the user explicitly supplied text, resolve its exact wording and quiet placement; otherwise plan for no text.
+9. Follow the Micro-Text Interaction rules: if the user's text preference is unknown, ask once (default is English micro-text); then resolve the language mode, text form, exact micro-text, and placement.
 10. Compile the four-paragraph final prompt.
 11. Generate with the supplied photo as reference.
 12. Inspect at normal and thumbnail scale.
@@ -277,12 +304,12 @@ Regenerate at most once, correcting only the observed failure:
 - **Color too modern:** reduce saturation, apply vintage film cast, lift shadows.
 - **Lines too straight:** force curvature on all horizons, buildings, and edges.
 - **Over-clean:** add grain, light leaks, soft focus, or slight chromatic aberration.
-- **Text failure:** remove any unintended text; if the user supplied wording, restore it exactly, small and quiet in the dark matte.
+- **Text failure:** restore exact wording, reduce size, move to dark matte, or soften lettering.
 - **Glossy/HDR:** remove digital polish, add matte film surface, reduce contrast.
 
 ## Hard Avoids
 
-Avoid clean digital photography, modern HDR, excessive sharpness, perfect straight lines inside the circle, rectangular image areas without circular crop, white or transparent backgrounds outside the circle, cartoon or anime treatment, 3D rendering, glossy finishes, neon glow (unless source-appropriate), cinematic depth of field, fashion-editorial polish, excessive AI smoothing, large or polished digital typography, bold all-caps, keyword spam, mixed decorative separators, illegible text, long text blocks, invented quotations, faux metadata, watermarks, any text, captions, letters, or numbers not explicitly supplied by the user, and stock-fisheye cliches (skateboard repetitions, generic crowd shots without source identity).
+Avoid clean digital photography, modern HDR, excessive sharpness, perfect straight lines inside the circle, rectangular image areas without circular crop, white or transparent backgrounds outside the circle, cartoon or anime treatment, 3D rendering, glossy finishes, neon glow (unless source-appropriate), cinematic depth of field, fashion-editorial polish, excessive AI smoothing, large or polished digital typography, bold all-caps, keyword spam, mixed decorative separators, illegible text, long text blocks, invented quotations, faux metadata, watermarks, and stock-fisheye cliches (skateboard repetitions, generic crowd shots without source identity).
 
 ## Output Format
 
@@ -320,8 +347,9 @@ Before returning, verify:
 - Are highlights softened (not harshly clipped)?
 - Is there natural vignetting from center to edge?
 - Is the overall mood lo-fi and analog rather than digital and polished?
-- Is the image completely free of text, unless the user explicitly supplied wording?
-- If user-supplied text is present, does it use the exact wording, small and subordinate in the dark matte?
+- Does the micro-text use supplied wording exactly, or stay within length limits when authored?
+- Is the text English-only by default, placed in the dark matte or subtle edge?
+- Is the text legible, small, and subordinate?
 - Does the image avoid modern HDR, excessive sharpness, and glossy finishes?
 - Did the response include the image and one genuinely brief creative rationale?
 - Was the sharing credit appended only on the first and second successful generation?
