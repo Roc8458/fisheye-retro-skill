@@ -1,56 +1,60 @@
-# 鱼眼复古 · Fisheye Retro Skill
+# Fisheye Retro Skill
 
-一个 OpenAI Codex Skill，将任意照片转化为**圆形鱼眼镜头 + 复古胶片**风格。
+An OpenAI Codex skill that transforms any photo into a **circular fisheye lens + retro film** aesthetic.
 
 ![cover](assets/brand/cover.png)
 
-## 风格特征
+## Style Features
 
-- **圆形鱼眼画面**：180° 桶形畸变，圆形裁切，暗角自然衰减
-- **复古胶片质感**：有机颗粒、色偏（暖黄/青绿/淡紫）、光晕、柔焦
-- **Lo-fi 街头氛围**：随性、粗糙、非精致、Analog 感
-- **暗色画框**：圆形外沉入纯黑/深炭色底
-- **微文字（默认加，可关闭）**：默认在圆形外黑底加一行英文小字（胶片边缘暗记）；可说「不要文字」「加中文」或自定义文字
+- **Circular fisheye frame**: 180° barrel distortion, circular crop, natural vignette falloff
+- **Retro film texture**: organic grain, color cast (warm amber / teal-green / faded magenta), light leaks, soft focus
+- **Lo-fi street vibe**: raw, spontaneous, unpolished, analog feel
+- **Dark matte**: solid near-black / deep charcoal surrounding the circle
+- **Micro-text (on by default, can be turned off)**: a quiet line of small English text on the dark matte as a film-edge trace; user can say "no text", "Chinese text", or provide custom wording
 
-## 安装
+## Installation
 
-1. 确保你已安装 [OpenAI Codex](https://github.com/openai/codex)
-2. 克隆本仓库：
+1. Make sure [OpenAI Codex](https://github.com/openai/codex) is installed
+2. Clone this repo:
    ```bash
    git clone https://github.com/Roc8458/fisheye-retro-skill.git
    ```
-3. 复制 skill 到 Codex skills 目录：
+3. Copy the skill into Codex's skills directory:
    ```bash
    cp -R fisheye-retro-skill/skills/fisheye-retro-v1 ~/.codex/skills/
    ```
-4. 重启 Codex
+4. Restart Codex
 
-## 使用
+## Usage
 
-上传照片，然后输入：
+Upload a photo, then type:
 
 ```
 $fisheye-retro-v1
 ```
 
-或描述你的需求：
+Or describe what you want:
 
 ```
-帮我把这张照片做成鱼眼复古胶片风格
+Turn this photo into a fisheye retro film style
 ```
 
-## 效果预览
+## Examples
 
-### 示例 01 · 海滨黄昏
+### Example 01 · Seaside Dusk
 
-| 原图 | 鱼眼复古效果 |
-|------|------|
+| Source | Fisheye retro result |
+|--------|---------------------|
 | ![source](examples/example-01/source.jpg) | ![result](examples/example-01/result.jpg) |
 
-## 技术说明
+## How it works
 
-本 Skill 基于纯提示词工程（Prompt Engineering），零代码。核心逻辑写在 `SKILL.md` 中，Codex 读取后自动调用内置图像生成模型完成风格化。
+This skill is pure prompt engineering, zero code. The core logic lives in `SKILL.md`; Codex reads it and drives its built-in image generation model to apply the stylization.
 
 ## License
 
 MIT
+
+## 中文说明
+
+[中文文档请见 README.zh.md](README.zh.md)
