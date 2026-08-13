@@ -1,3 +1,9 @@
 # 豆包人设版仅本地使用，不上传
 豆包SKILL.md
 豆包智能体人设版.md
+
+# 本地临时脚本，不上传
+remove_watermark.py
+_prep_example.py
+_make_zip.py
+_check.py
